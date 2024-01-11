@@ -40,6 +40,13 @@ class PengajarController extends BaseController
              'data_pengguna' => $m->findAll()
          ]);
      }
+
+     public function absensi()
+    {
+        $absensiModel = new \App\Models\AbsensiModel();
+        $data['status'] = $absensiModel->findAll();
+        return view('AbsensiSiswa/index.php', $data);
+    }
  
      public function form(){
          return view('PengajarView/form');

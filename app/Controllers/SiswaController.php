@@ -89,7 +89,7 @@ class SiswaController extends BaseController
     {
         $absensiModel = new \App\Models\AbsensiModel();
         $data['absensi'] = $absensiModel->findAll();
-        return view('absensi/index', $data);
+        return view('SiswaView/absen.php', $data);
     }
  
      public function show(){
