@@ -7,9 +7,8 @@ use App\Models\AbsensiModel;
 
 class AbsensiController extends BaseController
 {
-    public function tampil(){
-        $a = new AbsensiModel();
-
+    public function tampil()
+    {
         return view('AbsensiSiswa/index');
     }
 

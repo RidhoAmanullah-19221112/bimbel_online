@@ -7,9 +7,9 @@ use App\Models\MateriModel;
 
 class MateriController extends BaseController
 {
-    public function index()
+    public function tampil()
     {
-        //
+        return view('MateriView/tampildata');
     }
 
     public function create()

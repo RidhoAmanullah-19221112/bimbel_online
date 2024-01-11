@@ -52,7 +52,7 @@
         <label for="tingkat"><b>Pilih Sebagai</b></label>
         <select name="tingkat">
             <option value="" disabled selected>-</option>
-            <option value="Pengajar">Pelajar</option>
+            <option value="Pengajar">Pengajar</option>
             <option value="Siswa">Siswa</option>
         </select>
 
