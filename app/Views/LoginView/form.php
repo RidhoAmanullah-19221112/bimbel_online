@@ -41,8 +41,8 @@
     </style>
 </head>
 <body>
+    <form action="<?=base_url()?>/LoginView" method="post">
     <div class="container">
-    <form action="<?php echo base_url() ?>/login" method="post">
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Masukkan Email" name="email" required>
 
@@ -52,7 +52,7 @@
         <label for="tingkat"><b>Pilih Sebagai</b></label>
         <select name="tingkat">
             <option value="" disabled selected>-</option>
-            <option value="Pengajar">Pengajar</option>
+            <option value="Pengajar">Pelajar</option>
             <option value="Siswa">Siswa</option>
         </select>
 

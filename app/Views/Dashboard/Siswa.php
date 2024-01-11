@@ -34,8 +34,7 @@
 </head>
 <body>
     <div class="container">
-    <form action="<?php echo base_url() ?>/Siswa" method="post">
-        <button class="menu-item">Absensi</button>
+        <div class="menu-item">Absensi</div>
         <div class="menu-item">Nilai</div>
         <div class="menu-item">Materi</div>
         <div class="menu-item">Kelas</div>
