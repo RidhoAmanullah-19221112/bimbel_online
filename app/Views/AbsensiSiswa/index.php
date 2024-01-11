@@ -91,7 +91,23 @@
             <tr>
                 <td>Contoh Siswa</td>
                 <td>2024-01-11</td>
-                <td>Hadir</td>
+                <td><button id="attendanceButton" onclick="changeText()">Hadir</button></td>
+                <script>
+                function changeText() {
+                    var button = document.getElementById("attendanceButton");
+                    button.innerHTML = "Hadir";
+                    button.disabled = true;
+
+                    // Membuat objek XMLHttpRequest
+                    var xhr = new XMLHttpRequest();
+
+                    // Mengatur tipe permintaan dan URL
+                    xhr.open("POST", "update_absensi.php", true);
+
+                    // Mengirim permintaan
+                    xhr.send("user_id=USER_ID&status=Hadir");
+                }
+                </script>
             </tr>
         </table>
     </div>
