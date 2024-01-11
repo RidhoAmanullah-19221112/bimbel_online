@@ -6,8 +6,20 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('login/form', [
-            'login' => session()->get('login')]
+        return view('welcome_message');
+    }
+
+    public function dashboardp(): string
+    {
+        return view('Dashboard/Pengajar', [
+            'Pengajar' => session()->get('Pengajar')]
+        );
+    }
+
+    public function dashboardsiswa(): string
+    {
+        return view('Dashboard/Siswa', [
+            'Siswa' => session()->get('Siswa')]
         );
     }
 }

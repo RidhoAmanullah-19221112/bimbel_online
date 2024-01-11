@@ -10,16 +10,16 @@ class SiswaController extends BaseController
 {
     
     public function tampil_dashboard(){
-        return view('Dashboard/Siswa', [
-            'data_anggota' => (new SiswaModel())->findAll()
-        ]);
+        return view('Dashboard/Siswa');
     }
 
     private function cek_validasi(){
         $rules = [
             'email' => 'required|valid_email',
             'katasandi' => 'required|min_length[6]',
-            'nama_lengkap' => 'required|min_length[5]',
+            'namapeserta' => 'required|min_length[5]',
+            'jenis_kelamin' => 'required|in_list[L,P]',
+            'username' => 'required|min_length[5]',
         ];
         $msg = [
             'email' => [
@@ -29,7 +29,19 @@ class SiswaController extends BaseController
             'katasandi' => [
                 'required' => 'Kata sandi tidak boleh kosong',
                 'min_length' => 'Minimal katasandi 6 karakter'
-            ]
+            ],
+            'namapeserta' => [
+                'required' => 'Nama peserta tidak boleh kosong',
+                'min_length' => 'Minimal nama peserta 5 karakter'
+            ],
+            'jenis_kelamin' => [
+                'required' => 'Jenis kelamin tidak boleh kosong',
+                'in_list' => 'Jenis kelamin harus berupa "L" atau "P"'
+            ],
+            'username' => [
+                'required' => 'Username tidak boleh kosong',
+                'min_length' => 'Minimal username 5 karakter'
+            ],
         ];
         return Services::validation()
                     ->setRules($rules, $msg)
@@ -43,9 +55,10 @@ class SiswaController extends BaseController
         $model = new SiswaModel();
         $data = [
           'email' => request()->getPost('email'),
-          'katasandi' => request()->getPost('katasandi'),
-          'nama_lengkap' => request()->getPost('nama_lengkap'),
-          'jeniskelamin' => request()->getPost('jeniskelamin'),
+          'password' => request()->getPost('password'),
+          'namapeserta' => request()->getPost('namapeserta'),
+          'jenis_kelamin' => request()->getPost('jenis_kelamin'),
+          'username' => request()->getPost('username'),
           'alamat' => request()->getPost('alamat'),
         ];
  
@@ -71,6 +84,13 @@ class SiswaController extends BaseController
           return redirect()->to(base_url('SiswaView'));
         }
      }
+
+    public function absensi()
+    {
+        $absensiModel = new \App\Models\AbsensiModel();
+        $data['absensi'] = $absensiModel->findAll();
+        return view('absensi/index', $data);
+    }
  
      public function show(){
          $m = new SiswaModel();

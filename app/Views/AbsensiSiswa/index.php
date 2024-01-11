@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard Pengajar</title>
+    <title>Dashboard Siswa</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -34,13 +34,8 @@
 </head>
 <body>
     <div class="container">
-    <form action="<?php echo base_url() ?>/Pengajar" method="post">
-        <button class="menu-item">Absensi</button>
-        <button class="menu-item">Daftar Siswa</button>
-        <button class="menu-item">Nilai Siswa</button>
-        <button class="menu-item">Materi</button>
-        <button class="menu-item">Kelas</button>
-        <button class="menu-item">Jadwal</button>
+        <div class="menu-item">Nama</div>
+        <div class="menu-item">Absen</div>
     </div>
 </body>
 </html>

@@ -10,13 +10,13 @@ class LoginController extends BaseController
 {
     public function form()
     {
-        return view('login/form');
+        return view('LoginView/form');
     }
 
     public function login()
     {
         $tingkat = request()->getPost('tingkat');
-        if($tingkat == 'GURU'){
+        if($tingkat == 'PGJ'){
             $e = request()->getPost('email');
             $k = request()->getPost('katasandi');
 
@@ -27,61 +27,32 @@ class LoginController extends BaseController
             if($r == null){
                 return "Login gagal";
             }else{
-                session()->set('Pengajar', $r);
-                return redirect()->to(base_url('/Dashboard/Pengajar'));
+                session()->set('pengajar', $r);
+                return redirect()->to(base_url('/'));
             }}
-        elseif($tingkat == 'SISWA'){
+        elseif($tingkat == 'SIS'){
             $e = request()->getPost('email');
             $k = request()->getPost('katasandi');
-
+    
             $m = new SiswaModel();
             $r = $m->where('email', $e)
                 ->where('katasandi', $k)->first();
-
+    
             if($r == null){
                 return "Login gagal";
             }else{
-                session()->set('Siswa', $r);
-                return redirect()->to(base_url('/Dashboard/Siswa'));  
-            }
-        }else{
-            return redirect()->to(base_url('login'));
-        }
+                session()->set('siswa', $r);
+                return redirect()->to(base_url('dashboard/siswa'));
+            }}
     }
 
-    public function logout()
+    public function signup()
     {
+      return view('signup/form');
+    }
+
+    public function logout(){
         session()->destroy();
         return redirect()->to(base_url('login'));
-    }
-
-    public function daftar()
-    {
-        return view('login/daftar'); // Gantilah 'login/daftar' dengan nama tampilan pendaftaran yang sesuai
-    }
-
-    public function proses_daftar()
-    {
-        // Implementasi logika pendaftaran pengguna di sini
-        // Ini bisa mencakup validasi data, penyimpanan pengguna baru ke dalam database, dll.
-        // Setelah pendaftaran sukses, Anda bisa mengarahkan pengguna ke halaman yang sesuai.
-
-        // Contoh validasi sederhana (gantilah ini dengan validasi yang sesuai):
-        $rules = [
-            'email' => 'required|valid_email',
-            'password' => 'required|min_length[6]',
-            // Tambahkan aturan validasi lainnya sesuai kebutuhan
-        ];
-
-        if (!$this->validate($rules)) {
-            return redirect()->to(base_url('login/daftar'))->withInput()->with('validation', $this->validator);
-        }
-
-        // Jika validasi sukses, simpan pengguna ke database dan setelah itu arahkan pengguna ke halaman yang sesuai.
-    }
-
-    public function lupa_password()
-    {
-        // Logic untuk pemulihan kata sandi (optional)
     }
 }

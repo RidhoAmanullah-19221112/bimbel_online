@@ -1,43 +1,62 @@
-<form action="<?=base_url()?>/login" method="post">
-<div class="container">
-        <h2 align="center" class="text">Bimbel Online</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 300px;
+            padding: 16px;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+        input[type=text], input[type=password], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form action="<?php echo base_url() ?>/login" method="post">
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Masukkan Email" name="email" required>
+
+        <label for="katasandi"><b>Password</b></label>
+        <input type="password" placeholder="Masukkan Password" name="katasandi" required>
+
+        <label for="tingkat"><b>Pilih Sebagai</b></label>
+        <select name="tingkat">
+            <option value="" disabled selected>-</option>
+            <option value="Pengajar">Pengajar</option>
+            <option value="Siswa">Siswa</option>
+        </select>
+
+        <button type="submit">Login</button>
     </div>
-
-    <div align="center" class="card text-white bg-success mb-3">
-        <div class="card-header"></div>
-        <div class="card-body">
-
-                <input type="hidden" name="id" value="<?=$data['id']?? ''?>" >
-
-        <div class="form-group row">
-            <label for="email" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-6">
-                <input type="text" name="email" value="<?=$data['email']?? ''?>">
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label for="password" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-6">
-                <input type="password" name="katasandi" value="<?=$data['password']?? ''?>">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="tingkat" class="col-sm-2 col-form-label">Tingkat</label>
-            <div class="col-sm-6">
-                <select name="tingkat" value="<?=$data['tingkat']?? ''?>">
-                    <option value="" disabled selected>-</option>
-                    <option value="SISWA">Siswa</option>
-                    <option value="GURU">Pengajar</option>
-                </select>
-            </div>
-        </div>
-        <br>
-        <button>Login</button>
-        </div>
-        
-    </div>
-
-    
-
-</form>
+</body>
+</html>

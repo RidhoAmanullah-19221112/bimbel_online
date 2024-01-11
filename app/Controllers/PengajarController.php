@@ -16,10 +16,10 @@ class PengajarController extends BaseController
         $model = new PengajarModel();
         $data = [
           'email' => request()->getPost('email'),
-          'nama_lengkap' => request()->getPost('nama_lengkap'),
-          'tingkat' => request()->getPost('tingkat'),
-          'katasandi' => request()->getPost('katasandi'),
-          
+          'username' => request()->getPost('username'),
+          'namapengajar' => request()->getPost('namapengajar'),
+          'jenis_kelamin' => request()->getPost('jenis_kelamin'),
+          'password' => request()->getPost('password'),
         ];
  
         $id = (int) request()->getPost('id');
@@ -58,5 +58,6 @@ class PengajarController extends BaseController
          return view('PengajarView/form', [
              'data' => $data
          ]);
-        }
-    }
+     }
+}
+?>

@@ -40,9 +40,7 @@ class MateriController extends BaseController
      public function show(){
          $m = new MateriModel();
  
-         return view('Buku/tampildata', [
-             'data_buku' => $m->findAll()
-         ]);
+         return view('MateriView/tampildata');
      }
  
      public function form(){
