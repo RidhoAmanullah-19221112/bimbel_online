@@ -7,9 +7,14 @@ use App\Models\MateriModel;
 
 class MateriController extends BaseController
 {
-    public function tampil()
+    public function tampilpengajar()
     {
-        return view('MateriView/tampildata');
+        return view('PengajarView/materipengajar');
+    }
+
+    public function tampilsiswa()
+    {
+        return view('SiswaView/materi-siswa');
     }
 
     public function create()
