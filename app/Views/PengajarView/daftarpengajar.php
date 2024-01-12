@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Absensi</title>
+    <title>Daftar Siswa</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -42,17 +42,14 @@
         .show-text .menu-item {
             opacity: 1;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
+        .materi {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
             border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
+            border-radius: 4px;
+            margin-top: 20px;
+            box-sizing: border-box;
         }
     </style>
     <script>
@@ -66,50 +63,39 @@
     </script>
 </head>
 <body>
-    <button onclick="toggleSidebar()">☰</button>
+<button onclick="toggleSidebar()">☰</button>
     <div class="sidebar">
-        <form action="<?php echo base_url() ?>/Pengajar" method="post">
-            <a href="tampildata.php" class="menu-item">Home</a>
-            <a href="index.php" class="menu-item">Absensi</a>
+        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Home" method="post">
+            <button class="menu-item">Home</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Absen-Siswa" method="post">
+            <button class="menu-item">Absensi</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Daftar-Siswa" method="post">
             <button class="menu-item">Daftar Siswa</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Nilai-Siswa" method="post">
             <button class="menu-item">Nilai Siswa</button>
-            <a href="tampildata.php" class="menu-item">Materi</a>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Materi" method="post">
+            <button class="menu-item">Materi</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Kelas" method="post">
             <button class="menu-item">Kelas</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Jadwal" method="post">
             <button class="menu-item">Jadwal</button>
-            <a href="tampildata.php" class="menu-item">Keluar</a>
+        </form>
+        <form action="<?php echo base_url() ?>/keluar" method="post">
+            <button class="menu-item">Logout</button>
         </form>
     </div>
     <div class="container">
-        <h1>Absensi</h1>
-        <table>
-            <tr>
-                <th>Nama Siswa</th>
-                <th>Tanggal</th>
-                <th>Status</th>
-            </tr>
-            <!-- Anda dapat mengisi tabel ini dengan data absensi dari server Anda -->
-            <tr>
-                <td>Contoh Siswa</td>
-                <td>2024-01-11</td>
-                <td><button id="attendanceButton" onclick="changeText()">Hadir</button></td>
-                <script>
-                function changeText() {
-                    var button = document.getElementById("attendanceButton");
-                    button.innerHTML = "Hadir";
-                    button.disabled = true;
-
-                    // Membuat objek XMLHttpRequest
-                    var xhr = new XMLHttpRequest();
-
-                    // Mengatur tipe permintaan dan URL
-                    xhr.open("POST", "update_absensi.php", true);
-
-                    // Mengirim permintaan
-                    xhr.send("user_id=USER_ID&status=Hadir");
-                }
-                </script>
-            </tr>
-        </table>
+        <h1>Dafter Siswa</h1>
+        <div class="materi">
+        
+        </div>
+        <!-- Anda dapat menambahkan lebih banyak div materi sesuai dengan jumlah materi yang Anda miliki -->
     </div>
 </body>
 </html>

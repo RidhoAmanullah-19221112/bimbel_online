@@ -50,7 +50,7 @@
         <input type="password" placeholder="Masukkan Password" name="katasandi" required>
 
         <label for="tingkat"><b>Pilih Sebagai</b></label>
-        <select name="tingkat">
+        <select name="tingkat" value="<?=$tingkat['tingkat']?? ''?>">
             <option value="" disabled selected>-</option>
             <option value="Pengajar">Pengajar</option>
             <option value="Siswa">Siswa</option>

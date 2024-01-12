@@ -78,6 +78,18 @@ class Filters extends BaseConfig
                 'PengajarView/*',
                 'SiswaView',
                 'SiswaView/*',
+                'AbsensiSiswa',
+                'AbsensiSiswa/*',
+                'JadwalView',
+                'JadwalView/*',
+                'KelasView',
+                'KelasView/*',
+                'MateriView',
+                'MateriView/*',
+                'NilaiView',
+                'NilaiView/*',
+                'NilaiView',
+                'NilaiView/*',
 
             ]
         ]

@@ -56,14 +56,26 @@
 <body>
     <button onclick="toggleSidebar()">☰</button>
     <div class="sidebar">
-        <form action="<?php echo base_url() ?>/Pengajar" method="post">
-            <a href="Siswa.php" class="menu-item">Home</a>
-            <a href="absen.php" class="menu-item">Absensi</a>
+    <form action="<?php echo base_url() ?>/Dashboard/Siswa/Home" method="post">
+            <button class="menu-item">Home</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Absensi" method="post">
+            <button class="menu-item">Absensi</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Nilai-Siswa" method="post">
             <button class="menu-item">Nilai</button>
-            <a href="tampildata.php" class="menu-item">Materi</a>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Materi-Siswa" method="post">
+            <button class="menu-item">Materi</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Kelas" method="post">
             <button class="menu-item">Kelas</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Jadwal" method="post">
             <button class="menu-item">Jadwal</button>
-            <a href="tampildata.php" class="menu-item">Keluar</a>
+        </form>
+        <form action="<?php echo base_url() ?>/keluar" method="post">
+            <button class="menu-item">Logout</button>
         </form>
     </div>
     <div class="container">

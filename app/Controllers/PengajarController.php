@@ -45,7 +45,34 @@ class PengajarController extends BaseController
     {
         $absensiModel = new \App\Models\AbsensiModel();
         $data['status'] = $absensiModel->findAll();
-        return view('AbsensiSiswa/index.php', $data);
+        return view('AbsensiSiswa/index', $data);
+    }
+
+    public function materi()
+    {
+        $absensiModel = new \App\Models\MateriModel();
+        $data['status'] = $absensiModel->findAll();
+        return view('MateriView/tampildata', $data);
+    }
+
+    public function kelas()
+    {
+        return view('KelasView/tampildata');
+    }
+
+    public function jadwal()
+    {
+        return view('JadwalView/tampildata');
+    }
+
+    public function daftar_siswa()
+    {
+        return view('JadwalView/tampildata');
+    }
+
+    public function nilai_siswa()
+    {
+        return view('NilaiView/tampildata');
     }
  
      public function form(){
@@ -70,5 +97,10 @@ class PengajarController extends BaseController
              'data' => $data
          ]);
      }
+
+     public function logout()
+    {
+        return view('LoginView/form');
+    }
 }
 ?>

@@ -34,11 +34,15 @@ class NilaiController extends BaseController
      }
  
      public function show(){
-         $m = new NilaiModel();
- 
-         return view('Koleksibuku/tampildata', [
-             'data_koleksibuku' => $m->findAll()
-         ]);
+        return view('NilaiView/tampildata');
+     }
+
+     public function tampilpengajar(){
+        return view('PengajarView/nilaipengajar');
+     }
+
+     public function tampilsiswa(){
+        return view('SiswaView/nilai-siswa');
      }
  
      public function form(){

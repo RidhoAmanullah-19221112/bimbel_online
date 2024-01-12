@@ -27,8 +27,8 @@ class LoginController extends BaseController
             if($r == null){
                 return "Login gagal";
             }else{
-                session()->set('pengajar', $r);
-                return redirect()->to(base_url('Dashboard/Pengajar  '));
+                session()->set('Pengajar', $r);
+                return redirect()->to(base_url('Dashboard/Pengajar'));
             }}
         elseif($tingkat == 'Siswa'){
             $e = request()->getPost('email');
@@ -41,7 +41,7 @@ class LoginController extends BaseController
             if($r == null){
                 return "Login gagal";
             }else{
-                session()->set('siswa', $r);
+                session()->set('Siswa', $r);
                 return redirect()->to(base_url('Dashboard/Siswa'));
             }}
     }
@@ -53,6 +53,6 @@ class LoginController extends BaseController
 
     public function logout(){
         session()->destroy();
-        return redirect()->to(base_url('login'));
+        return redirect()->to(base_url('LoginView'));
     }
 }

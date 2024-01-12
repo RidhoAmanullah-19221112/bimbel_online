@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard Pengajar</title>
+    <title>Jadwal Pengajar</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -42,6 +42,15 @@
         .show-text .menu-item {
             opacity: 1;
         }
+        .jadwal {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
     </style>
     <script>
         function toggleSidebar() {
@@ -56,25 +65,23 @@
 <body>
     <button onclick="toggleSidebar()">☰</button>
     <div class="sidebar">
-    <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Home" method="post">
+    <div class="sidebar">
+    <form action="<?php echo base_url() ?>/Dashboard/Siswa/Home" method="post">
             <button class="menu-item">Home</button>
         </form>
-        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Absen-Siswa" method="post">
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Absensi" method="post">
             <button class="menu-item">Absensi</button>
         </form>
-        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Daftar-Siswa" method="post">
-            <button class="menu-item">Daftar Siswa</button>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Nilai-Siswa" method="post">
+            <button class="menu-item">Nilai</button>
         </form>
-        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Nilai-Siswa" method="post">
-            <button class="menu-item">Nilai Siswa</button>
-        </form>
-        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Materi" method="post">
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Materi-Siswa" method="post">
             <button class="menu-item">Materi</button>
         </form>
-        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Kelas" method="post">
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Kelas" method="post">
             <button class="menu-item">Kelas</button>
         </form>
-        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Jadwal" method="post">
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Jadwal" method="post">
             <button class="menu-item">Jadwal</button>
         </form>
         <form action="<?php echo base_url() ?>/keluar" method="post">
@@ -82,7 +89,33 @@
         </form>
     </div>
     <div class="container">
-        <!-- Konten utama akan berada di sini -->
+        <h1>Jadwal Pengajar</h1>
+        <div class="jadwal">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Hari</th>
+                        <th>Tanggal</th>
+                        <th>Jam</th>
+                        <th>Sesi</th>
+                        <th>Judul Materi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($jadwal as $row): ?>
+                    <tr>
+                        <td><?= $row['id']; ?></td>
+                        <td><?= $row['hari']; ?></td>
+                        <td><?= $row['tanggal']; ?></td>
+                        <td><?= $row['jam']; ?></td>
+                        <td><?= $row['sesi']; ?></td>
+                        <td><?= $row['judulmateri']; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
