@@ -51,6 +51,10 @@ class PengajarController extends BaseController
      public function form(){
          return view('PengajarView/form');
      }
+
+     public function sukses(){
+        return view('Signuppengajar/tampildata');
+    }
  
      public function delete(){
          $id = request()->getPost('id');
