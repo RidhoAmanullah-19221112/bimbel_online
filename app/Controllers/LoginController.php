@@ -46,9 +46,9 @@ class LoginController extends BaseController
             }}
     }
 
-    public function signup()
+    public function Signuppengajar()
     {
-      return view('signup/form');
+      return view('Signuppengajar/form');
     }
 
     public function logout(){

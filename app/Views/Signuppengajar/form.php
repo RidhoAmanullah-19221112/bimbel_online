@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Page</title>
+    <title>SignUp</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -41,23 +41,29 @@
     </style>
 </head>
 <body>
-    <form action="<?=base_url()?>/LoginView" method="post">
+    <form action="<?=base_url()?>/sukses" method="post">
     <div class="container">
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Masukkan Email" name="email" required>
 
-        <label for="katasandi"><b>Password</b></label>
-        <input type="password" placeholder="Masukkan Password" name="katasandi" required>
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Masukkan Username" name="username" required>
 
-        <label for="tingkat"><b>Pilih Sebagai</b></label>
-        <select name="tingkat">
+        <label for="namapengajar"><b>Nama Pengajar</b></label>
+        <input type="text" placeholder="Masukkan Nama Pengajar" name="namapengajar" required>
+
+        <label for="jenis_kelamin"><b>Jenis Kelamin</b></label>
+        <select name="jenis_kelamin">
             <option value="" disabled selected>-</option>
-            <option value="Pengajar">Pengajar</option>
-            <option value="Siswa">Siswa</option>
+            <option value="Laki-laki">Laki-laki</option>
+            <option value="Perempuan">Perempuan</option>
         </select>
 
-        <button type="submit">Login</button>
-        <p>Belum memiliki akun? <a href="<?=base_url()?>/Signuppengajar">Daftar di sini</a></p>
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Masukkan Password" name="password" required>
+
+        <button type="submit">Daftar</button>
     </div>
+</form>
 </body>
 </html>
