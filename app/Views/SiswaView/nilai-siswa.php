@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Materi</title>
+    <title>Nilai</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -65,23 +65,32 @@
 <body>
     <button onclick="toggleSidebar()">☰</button>
     <div class="sidebar">
-        <form action="<?php echo base_url() ?>/Pengajar" method="post">
-            <a href="tampildata.php" class="menu-item">Home</a>
-            <a href="index.php" class="menu-item">Absensi</a>
-            <button class="menu-item">Daftar Siswa</button>
-            <button class="menu-item">Nilai Siswa</button>
-            <a href="tampildata.php" class="menu-item">Materi</a>
+    <form action="<?php echo base_url() ?>/Dashboard/Siswa/Home" method="post">
+            <button class="menu-item">Home</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Absensi" method="post">
+            <button class="menu-item">Absensi</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Nilai-Siswa" method="post">
+            <button class="menu-item">Nilai</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Materi-Siswa" method="post">
+            <button class="menu-item">Materi</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Kelas" method="post">
             <button class="menu-item">Kelas</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Jadwal" method="post">
             <button class="menu-item">Jadwal</button>
-            <a href="tampildata.php" class="menu-item">Keluar</a>
+        </form>
+        <form action="<?php echo base_url() ?>/keluar" method="post">
+            <button class="menu-item">Logout</button>
         </form>
     </div>
     <div class="container">
-        <h1>Materi</h1>
+        <h1>Nilai Siswa</h1>
         <div class="materi">
-            <h2>Judul Materi</h2>
-            <p>Ini adalah deskripsi singkat dari materi.</p>
-            <a href="materi.pdf" target="_blank">Buka Materi</a>
+            
         </div>
         <!-- Anda dapat menambahkan lebih banyak div materi sesuai dengan jumlah materi yang Anda miliki -->
     </div>

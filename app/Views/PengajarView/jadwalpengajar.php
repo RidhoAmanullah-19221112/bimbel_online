@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard Pengajar</title>
+    <title>Jadwal Pengajar</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -42,6 +42,15 @@
         .show-text .menu-item {
             opacity: 1;
         }
+        .jadwal {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
     </style>
     <script>
         function toggleSidebar() {
@@ -54,9 +63,9 @@
     </script>
 </head>
 <body>
-    <button onclick="toggleSidebar()">☰</button>
+<button onclick="toggleSidebar()">☰</button>
     <div class="sidebar">
-    <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Home" method="post">
+        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Home" method="post">
             <button class="menu-item">Home</button>
         </form>
         <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Absen-Siswa" method="post">
@@ -82,7 +91,33 @@
         </form>
     </div>
     <div class="container">
-        <!-- Konten utama akan berada di sini -->
+        <h1>Jadwal Pengajar</h1>
+        <div class="jadwal">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Hari</th>
+                        <th>Tanggal</th>
+                        <th>Jam</th>
+                        <th>Sesi</th>
+                        <th>Judul Materi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($jadwal as $row): ?>
+                    <tr>
+                        <td><?= $row['id']; ?></td>
+                        <td><?= $row['hari']; ?></td>
+                        <td><?= $row['tanggal']; ?></td>
+                        <td><?= $row['jam']; ?></td>
+                        <td><?= $row['sesi']; ?></td>
+                        <td><?= $row['judulmateri']; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>

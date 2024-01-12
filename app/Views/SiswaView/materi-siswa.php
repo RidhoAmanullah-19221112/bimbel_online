@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard Pengajar</title>
+    <title>Materi</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -42,6 +42,15 @@
         .show-text .menu-item {
             opacity: 1;
         }
+        .materi {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
     </style>
     <script>
         function toggleSidebar() {
@@ -56,25 +65,22 @@
 <body>
     <button onclick="toggleSidebar()">☰</button>
     <div class="sidebar">
-    <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Home" method="post">
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Home" method="post">
             <button class="menu-item">Home</button>
         </form>
-        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Absen-Siswa" method="post">
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Absensi" method="post">
             <button class="menu-item">Absensi</button>
         </form>
-        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Daftar-Siswa" method="post">
-            <button class="menu-item">Daftar Siswa</button>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Nilai-Siswa" method="post">
+            <button class="menu-item">Nilai</button>
         </form>
-        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Nilai-Siswa" method="post">
-            <button class="menu-item">Nilai Siswa</button>
-        </form>
-        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Materi" method="post">
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Materi-Siswa" method="post">
             <button class="menu-item">Materi</button>
         </form>
-        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Kelas" method="post">
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Kelas" method="post">
             <button class="menu-item">Kelas</button>
         </form>
-        <form action="<?php echo base_url() ?>/Dashboard/Pengajar/Jadwal" method="post">
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Jadwal" method="post">
             <button class="menu-item">Jadwal</button>
         </form>
         <form action="<?php echo base_url() ?>/keluar" method="post">
@@ -82,7 +88,13 @@
         </form>
     </div>
     <div class="container">
-        <!-- Konten utama akan berada di sini -->
+        <h1>Materi</h1>
+        <div class="materi">
+            <h2>Judul Materi</h2>
+            <p>Ini adalah deskripsi singkat dari materi.</p>
+            <a href="#" target="_blank">Buka Materi</a>
+        </div>
+        <!-- Anda dapat menambahkan lebih banyak div materi sesuai dengan jumlah materi yang Anda miliki -->
     </div>
 </body>
 </html>

@@ -32,14 +32,18 @@ class KelasController extends BaseController
           return redirect()->to(base_url('Penerbit'));
         }
      }
- 
-     public function show(){
-         $m = new KelasModel();
- 
-         return view('/Penerbit/tampildata', [
-             'data_penerbit' => $m->findAll()
-         ]);
-     }
+
+     public function tampilpengajar(){
+        $m = new KelasModel();
+
+        return view('PengajarView/kelaspengajar');
+    }
+
+    public function tampilsiswa(){
+        $m = new KelasModel();
+
+        return view('SiswaView/kelas-siswa');
+    }
  
      public function form(){
          return view('/Penerbit/form');

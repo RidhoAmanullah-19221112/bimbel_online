@@ -42,6 +42,18 @@
         .show-text .menu-item {
             opacity: 1;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
     </style>
     <script>
         function toggleSidebar() {
@@ -50,40 +62,33 @@
             sidebar.classList.toggle('show-sidebar');
             container.classList.toggle('show-container');
             sidebar.classList.toggle('show-text');
-        }/* ... (fungsi toggleSidebar Anda) ... */
-
-        // Fungsi untuk mengubah status absensi
-        function changeAttendanceStatus(studentId, attendanceStatus) {
-            // Ubah teks dan nonaktifkan tombol
-            var button = document.getElementById("attendanceButton" + studentId);
-            button.innerHTML = attendanceStatus;
-            button.disabled = true;
-
-            // Membuat objek XMLHttpRequest
-            var xhr = new XMLHttpRequest();
-
-            // Mengatur tipe permintaan dan URL
-            xhr.open("POST", "update_absensi.php", true);
-
-            // Mengirim permintaan
-            xhr.send("user_id=" + studentId + "&status=" + attendanceStatus);
         }
     </script>
 </head>
 <body>
     <button onclick="toggleSidebar()">☰</button>
     <div class="sidebar">
-        <form action="<?php echo base_url() ?>/Pengajar" method="post">
-            <a href="Pengajar.php" class="menu-item">Home</a>
-            <a href="index.php" class="menu-item">Absensi</a>
-            <button class="menu-item">Daftar Siswa</button>
-            <button class="menu-item">Nilai Siswa</button>
-            <a href="tampildata.php" class="menu-item">Materi</a>
-            <button class="menu-item">Kelas</button>
-            <button class="menu-item">Jadwal</button>
-            <a href="tampildata.php" class="menu-item">Keluar</a>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Home" method="post">
+            <button class="menu-item">Home</button>
         </form>
-        <!-- ... (sidebar Anda) ... -->
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Absensi" method="post">
+            <button class="menu-item">Absensi</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Nilai-Siswa" method="post">
+            <button class="menu-item">Nilai</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Materi-Siswa" method="post">
+            <button class="menu-item">Materi</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Kelas" method="post">
+            <button class="menu-item">Kelas</button>
+        </form>
+        <form action="<?php echo base_url() ?>/Dashboard/Siswa/Jadwal" method="post">
+            <button class="menu-item">Jadwal</button>
+        </form>
+        <form action="<?php echo base_url() ?>/keluar" method="post">
+            <button class="menu-item">Logout</button>
+        </form>
     </div>
     <div class="container">
         <h1>Absensi</h1>
@@ -92,17 +97,28 @@
                 <th>Nama Siswa</th>
                 <th>Tanggal</th>
                 <th>Status</th>
-                <th>Aksi</th>
             </tr>
             <!-- Anda dapat mengisi tabel ini dengan data absensi dari server Anda -->
             <tr>
-                <td>'Contoh Siswa'</td>
+                <td>Contoh Siswa</td>
                 <td>2024-01-11</td>
-                <td id="attendanceStatus1">Hadir</td>
-                <td>
-                    <button id="attendanceButton1" onclick="changeAttendanceStatus(1, 'Tidak Hadir')">Ubah ke Tidak Hadir</button>
-                    <button id="attendanceButton1" onclick="changeAttendanceStatus(1, 'Hadir')">Ubah ke Hadir</button>
-                </td>
+                <td><button id="attendanceButton" onclick="changeText()">Hadir</button></td>
+                <script>
+                function changeText() {
+                    var button = document.getElementById("attendanceButton");
+                    button.innerHTML = "Hadir";
+                    button.disabled = true;
+
+                    // Membuat objek XMLHttpRequest
+                    var xhr = new XMLHttpRequest();
+
+                    // Mengatur tipe permintaan dan URL
+                    xhr.open("POST", "update_absensi.php", true);
+
+                    // Mengirim permintaan
+                    xhr.send("user_id=USER_ID&status=Hadir");
+                }
+                </script>
             </tr>
         </table>
     </div>

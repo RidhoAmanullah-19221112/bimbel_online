@@ -29,6 +29,10 @@ class LoginFilter implements FilterInterface
         if($p == null){
             return redirect()->to(base_url('LoginView'));
         }
+        $p = session()->get('Pengajar',);
+        if($p == null){
+            return redirect()->to(base_url('LoginView'));
+        }
     }
 
     /**

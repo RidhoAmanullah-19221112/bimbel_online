@@ -3,13 +3,21 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\AbsensiModel;
 
 class AbsensiController extends BaseController
 {
-    public function tampil()
+    public function absensipengajar()
     {
-        return view('AbsensiSiswa/index');
+        $absensiModel = new \App\Models\AbsensiModel();
+        $data['status'] = $absensiModel->findAll();
+        return view('PengajarView/absen');
+    }
+
+    public function absensisiswa()
+    {
+        $absensiModel = new \App\Models\AbsensiModel();
+        $data['status'] = $absensiModel->findAll();
+        return view('SiswaView/absen-siswa');
     }
 
     public function tambah() {

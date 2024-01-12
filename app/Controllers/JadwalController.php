@@ -31,14 +31,31 @@ class JadwalController extends BaseController
           return redirect()->to(base_url('Kategori'));
         }
      }
- 
-     public function show(){
-         $m = new JadwalModel();
- 
-         return view('/Kategori/tampildatakategori', [
-             'data_kategori' => $m->findAll()
-         ]);
-     }
+
+    public function tampilpengajar(){
+        $m = new JadwalModel();
+    
+        // Fetch the schedule data
+        $jadwal = $m->findAll();
+    
+        // Pass the schedule data to your view
+        return view('/PengajarView/jadwalpengajar', [
+            'jadwal' => $jadwal
+        ]);
+    }
+
+    public function tampilsiswa(){
+        $m = new JadwalModel();
+    
+        // Fetch the schedule data
+        $jadwal = $m->findAll();
+    
+        // Pass the schedule data to your view
+        return view('/SiswaView/jadwal-siswa', [
+            'jadwal' => $jadwal
+        ]);
+    }
+    
  
      public function form(){
          return view('/Kategori/formkategori');

@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class AbsensiModel extends Model
+class DaftarsiswaModel extends Model
 {
-    protected $table            = 'tb_absensi';
+    protected $table            = 'tb_daftar_siswa';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
