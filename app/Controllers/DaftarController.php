@@ -19,37 +19,23 @@ class DaftarController extends BaseController
           'email' => request()->getPost('email'),
           'username' => request()->getPost('username'),
           'namapengajar' => request()->getPost('namapengajar'),
-          'jeniskelamin' => request()->getPost('jeniskelamin'),
+          'jenis_kelamin' => request()->getPost('jenis_kelamin'),
           'katasandi' => request()->getPost('katasandi'),
         ];
- 
-        $id = (int) request()->getPost('id');
-        if($id > 0){
-            $r = $model->update($id, $data);
-         }else{
-             $r = $model->insert($data);
-        }
-        if($r != false){
-          return redirect()->to(base_url('login'));
-        }
-    }
-
-    public function create1() {
-        // Get POST data
-        $email = $_POST['email'];
-        $username = $_POST['username'];
-        $namapengajar = $_POST['namapengajar'];
-        $jeniskelamin = $_POST['jeniskelamin'];
-        $password = $_POST['password'];
-
-        // Create a new instance of your model
-        $data = new PengajarModel();
-        
-        // Call the create method on the model
-        if($data->create1($email, $username, $namapengajar, $jeniskelamin, $password)) {
-            // Redirect or show a success message
+    
+        // Cek jika semua data kosong
+        if(array_filter($data)) {
+            $id = (int) request()->getPost('id');
+            if($id > 0){
+                $r = $model->set($id, $data)->update();
+            }else{
+                $r = $model->set($data)->insert();
+            }
+            if($r != false){
+              return redirect()->to(base_url('Signuppengajar/tampildata'));
+            }
         } else {
-            // Handle the error
+            echo "Tidak ada data untuk dimasukkan.";
         }
     }
 }

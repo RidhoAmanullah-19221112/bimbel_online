@@ -12,7 +12,7 @@ class PengajarModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['*'];
+    protected $allowedFields    = ['email', 'username', 'namapengajar', 'jenis_kelamin', 'katasandi'];
 
     // Dates
     protected $useTimestamps = false;
@@ -37,6 +37,26 @@ class PengajarModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+
+    public function create() {
+        // Get POST data
+        $email = $_POST['email'];
+        $username = $_POST['username'];
+        $namapengajar = $_POST['namapengajar'];
+        $jenis_kelamin = $_POST['jenis_kelamin'];
+        $katasandi = $_POST['katasandi'];
+
+        // Create a new instance of your model
+        $data = new PengajarModel();
+        
+        // Call the create method on the model
+        if($data->create1($email, $username, $namapengajar, $jenis_kelamin, $katasandi)) {
+            // Redirect or show a success message
+        } else {
+            // Handle the error
+        }
+    }
 
 }
     

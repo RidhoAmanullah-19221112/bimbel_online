@@ -43,28 +43,20 @@
 <body>
     <form method="post" action="<?=base_url('Daftar/Save')?>">
     <div class="container">
-        <input type="hidden" name="id" value="<?=$data['id']?? ''?>" >
-        
-        <label for="email"><b>Email</b></label>
-        <input type="text" name="email" placeholder="Masukkan Email" required value="<?=$data['email']?? ''?>">
-
-        <label for="username"><b>Username</b></label>
-        <input type="text" name="username" placeholder="Masukkan Username" required value="<?=$data['username']?? ''?>">
-
-        <label for="namapengajar"><b>Nama Pengajar</b></label>
-        <input type="text" name="namapengajar" placeholder="Masukkan Nama Pengajar" required value="<?=$data['namapengajar']?? ''?>">
-
-        <label for="jeniskelamin"><b>Jenis Kelamin</b></label>
-        <select name="jeniskelamin" value="<?=$data['jeniskelamin']?? ''?>">
-            <option value="" disabled selected>-</option>
-            <option value="L">Laki-laki</option>
-            <option value="P">Perempuan</option>
-        </select>
-
-        <label for="password"><b>Password</b></label>
-        <input name="password" type="password" placeholder="Masukkan Password" required value="<?=$data['password']?? ''?>">
-        
-        <button type="submit">Daftar</button>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="namapengajar">Nama Pengajar:</label><br>
+        <input type="text" id="namapengajar" name="namapengajar"><br>
+        <label for="jenis_kelamin">Jenis Kelamin:</label><br>
+        <select id="jenis_kelamin" name="jenis_kelamin">
+            <option value="Laki-laki">Laki-laki</option>
+            <option value="Perempuan">Perempuan</option>
+        </select><br>
+        <label for="katasandi">Kata Sandi:</label><br>
+        <input type="password" id="katasandi" name="katasandi"><br>
+        <input type="submit" value="Submit">
     </div>
     </form>
 </body>
