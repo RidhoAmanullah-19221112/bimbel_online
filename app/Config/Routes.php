@@ -7,8 +7,12 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::dashboardp');
 
-$routes->get('/LoginView', 'LoginController::form');
+$routes->get('/LoginView', 'LoginController::tampil');
 $routes->post('/LoginView', 'LoginController::login');
+$routes->get('/Daftar', 'LoginController::Signuppengajar');
+$routes->post('/Daftar', 'LoginController::Signuppengajar');
+$routes->get('/Daftar/Save', 'DaftarController::create1');
+$routes->post('/Daftar/Save', 'DaftarController::create1');
 $routes->get('/keluar', 'LoginController::logout');
 $routes->post('/keluar', 'LoginController::logout');
 

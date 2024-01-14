@@ -57,7 +57,7 @@
         </select>
 
         <button type="submit">Login</button>
-        <p>Belum memiliki akun? <a href="<?=base_url()?>/Signuppengajar">Daftar di sini</a></p>
+    <p>Belum memiliki akun? <a href="<?=base_url('Daftar')?>">Daftar di sini</a></p>
     </div>
 </body>
 </html>

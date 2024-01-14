@@ -8,7 +8,7 @@ use App\Models\PengajarModel;
 
 class LoginController extends BaseController
 {
-    public function form()
+    public function tampil()
     {
         return view('LoginView/form');
     }
@@ -45,10 +45,37 @@ class LoginController extends BaseController
                 return redirect()->to(base_url('Dashboard/Siswa'));
             }}
     }
+    
+    public function createpengajar()
+    {
+        $model = new PengajarModel();
+        $data = [
+          'email' => request()->getPost('email'),
+          'username' => request()->getPost('username'),
+          'namapengajar' => request()->getPost('namapengajar'),
+          'jenis_kelamin' => request()->getPost('jenis_kelamin'),
+          'katasandi' => request()->getPost('katasandi'),
+        ];
+ 
+        $id = (int) request()->getPost('id');
+        if($id > 0){
+            $r = $model->update($id, $data);
+         }else{
+             $r = $model->insert($data);
+        }
+        if($r != false){
+          return redirect()->to(base_url('LoginView'));
+        }
+     }
 
     public function Signuppengajar()
     {
       return view('Signuppengajar/form');
+    }
+
+    public function suksess()
+    {
+      return view('Signuppengajar/tampildata');
     }
 
     public function logout(){

@@ -82,4 +82,5 @@ class Database extends Config
             $this->defaultGroup = 'tests';
         }
     }
+
 }

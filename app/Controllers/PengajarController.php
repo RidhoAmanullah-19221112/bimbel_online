@@ -19,7 +19,7 @@ class PengajarController extends BaseController
           'username' => request()->getPost('username'),
           'namapengajar' => request()->getPost('namapengajar'),
           'jenis_kelamin' => request()->getPost('jenis_kelamin'),
-          'password' => request()->getPost('password'),
+          'katasandi' => request()->getPost('katasandi'),
         ];
  
         $id = (int) request()->getPost('id');
@@ -29,17 +29,10 @@ class PengajarController extends BaseController
              $r = $model->insert($data);
         }
         if($r != false){
-          return redirect()->to(base_url('PengajarView'));
+          return redirect()->to(base_url('/'));
         }
      }
- 
-     public function show(){
-         $m = new PengajarModel();
- 
-         return view('PengajarView/tampildata', [
-             'data_pengguna' => $m->findAll()
-         ]);
-     }
+
 
      public function absensi()
     {

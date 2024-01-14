@@ -41,29 +41,31 @@
     </style>
 </head>
 <body>
-    <form action="<?=base_url()?>/sukses" method="post">
+    <form method="post" action="<?=base_url('Daftar/Save')?>">
     <div class="container">
+        <input type="hidden" name="id" value="<?=$data['id']?? ''?>" >
+        
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Masukkan Email" name="email" required>
+        <input type="text" name="email" placeholder="Masukkan Email" required value="<?=$data['email']?? ''?>">
 
         <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Masukkan Username" name="username" required>
+        <input type="text" name="username" placeholder="Masukkan Username" required value="<?=$data['username']?? ''?>">
 
         <label for="namapengajar"><b>Nama Pengajar</b></label>
-        <input type="text" placeholder="Masukkan Nama Pengajar" name="namapengajar" required>
+        <input type="text" name="namapengajar" placeholder="Masukkan Nama Pengajar" required value="<?=$data['namapengajar']?? ''?>">
 
-        <label for="jenis_kelamin"><b>Jenis Kelamin</b></label>
-        <select name="jenis_kelamin">
+        <label for="jeniskelamin"><b>Jenis Kelamin</b></label>
+        <select name="jeniskelamin" value="<?=$data['jeniskelamin']?? ''?>">
             <option value="" disabled selected>-</option>
-            <option value="Laki-laki">Laki-laki</option>
-            <option value="Perempuan">Perempuan</option>
+            <option value="L">Laki-laki</option>
+            <option value="P">Perempuan</option>
         </select>
 
         <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Masukkan Password" name="password" required>
-
+        <input name="password" type="password" placeholder="Masukkan Password" required value="<?=$data['password']?? ''?>">
+        
         <button type="submit">Daftar</button>
     </div>
-</form>
+    </form>
 </body>
 </html>

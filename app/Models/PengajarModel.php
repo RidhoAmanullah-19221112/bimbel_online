@@ -38,17 +38,6 @@ class PengajarModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function insert($data)
-    {
-        // Query SQL untuk memasukkan data ke dalam tabel
-        $query = $this->db->table($this->table)->insert($data);
-        return $query;
-    }
-
-    public function update($id, $data)
-    {
-        // Query SQL untuk memperbarui data dalam tabel berdasarkan id
-        $query = $this->db->table($this->table)->update($data, ['id' => $id]);
-        return $query;
-    }
 }
+    
+
