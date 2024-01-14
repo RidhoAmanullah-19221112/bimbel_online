@@ -47,12 +47,12 @@
         <input type="email" id="email" name="email"><br>
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username"><br>
-        <label for="namapengajar">Nama Pengajar:</label><br>
-        <input type="text" id="namapengajar" name="namapengajar"><br>
+        <label for="namasiswa">Nama Siswa:</label><br>
+        <input type="text" id="namasiswa" name="namasiswa"><br>
         <label for="jenis_kelamin">Jenis Kelamin:</label><br>
         <select id="jenis_kelamin" name="jenis_kelamin">
-            <option value="Laki-laki">Laki-laki</option>
-            <option value="Perempuan">Perempuan</option>
+            <option value="L">Laki-laki</option>
+            <option value="P">Perempuan</option>
         </select><br>
         <label for="katasandi">Kata Sandi:</label><br>
         <input type="password" id="katasandi" name="katasandi"><br>

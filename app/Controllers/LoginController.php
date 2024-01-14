@@ -17,11 +17,11 @@ class LoginController extends BaseController
     {
         $tingkat = request()->getPost('tingkat');
         if($tingkat == 'Pengajar'){
-            $e = request()->getPost('email');
+            $e = request()->getPost('username');
             $k = request()->getPost('katasandi');
 
             $m = new PengajarModel();
-            $r = $m->where('email', $e)
+            $r = $m->where('username', $e)
                 ->where('katasandi', $k)->first();
 
             if($r == null){
@@ -31,11 +31,11 @@ class LoginController extends BaseController
                 return redirect()->to(base_url('Dashboard/Pengajar'));
             }}
         elseif($tingkat == 'Siswa'){
-            $e = request()->getPost('email');
+            $e = request()->getPost('username');
             $k = request()->getPost('katasandi');
     
             $m = new SiswaModel();
-            $r = $m->where('email', $e)
+            $r = $m->where('username', $e)
                 ->where('katasandi', $k)->first();
     
             if($r == null){
@@ -52,7 +52,7 @@ class LoginController extends BaseController
     $data = [
       'email' => request()->getPost('email'),
       'username' => request()->getPost('username'),
-      'namapengajar' => request()->getPost('namapengajar'),
+      'namasiswa' => request()->getPost('namasiswa'),
       'jenis_kelamin' => request()->getPost('jenis_kelamin'),
       'katasandi' => request()->getPost('katasandi'),
     ];
@@ -74,14 +74,14 @@ class LoginController extends BaseController
 }
 
 
-    public function Signuppengajar()
+    public function Signup()
     {
-      return view('Signuppengajar/form');
+      return view('Signup/form');
     }
 
     public function suksess()
     {
-      return view('Signuppengajar/tampildata');
+      return view('Signup/tampildata');
     }
 
     public function logout(){

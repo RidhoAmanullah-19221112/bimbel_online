@@ -9,12 +9,12 @@ $routes->get('/', 'Home::dashboardp');
 
 $routes->get('/LoginView', 'LoginController::tampil');
 $routes->post('/LoginView', 'LoginController::login');
-$routes->get('/Daftar', 'LoginController::Signuppengajar');
-$routes->post('/Daftar', 'LoginController::Signuppengajar');
+$routes->get('/Daftar', 'LoginController::Signup');
+$routes->post('/Daftar', 'LoginController::Signup');
 $routes->get('/Daftar/Save', 'DaftarController::create');
 $routes->post('/Daftar/Save', 'DaftarController::create');
-$routes->get('Signuppengajar/tampildata', 'LoginController::suksess');
-$routes->post('Signuppengajar/tampildata', 'LoginController::suksess');
+$routes->get('Signup/tampildata', 'LoginController::suksess');
+$routes->post('Signup/tampildata', 'LoginController::suksess');
 $routes->get('/keluar', 'LoginController::logout');
 $routes->post('/keluar', 'LoginController::logout');
 

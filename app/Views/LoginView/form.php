@@ -43,8 +43,8 @@
 <body>
     <form action="<?=base_url()?>/LoginView" method="post">
     <div class="container">
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Masukkan Email" name="email" required>
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Masukkan Username" name="username" required>
 
         <label for="katasandi"><b>Password</b></label>
         <input type="password" placeholder="Masukkan Password" name="katasandi" required>

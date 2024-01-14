@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\PengajarModel;
+use App\Models\SiswaModel;
 
 class DaftarController extends BaseController
 {
@@ -14,11 +14,11 @@ class DaftarController extends BaseController
 
     public function create()
     {
-        $model = new PengajarModel();
+        $model = new SiswaModel();
         $data = [
           'email' => request()->getPost('email'),
           'username' => request()->getPost('username'),
-          'namapengajar' => request()->getPost('namapengajar'),
+          'namasiswa' => request()->getPost('namasiswa'),
           'jenis_kelamin' => request()->getPost('jenis_kelamin'),
           'katasandi' => request()->getPost('katasandi'),
         ];
@@ -32,7 +32,7 @@ class DaftarController extends BaseController
                 $r = $model->set($data)->insert();
             }
             if($r != false){
-              return redirect()->to(base_url('Signuppengajar/tampildata'));
+              return redirect()->to(base_url('Signup/tampildata'));
             }
         } else {
             echo "Tidak ada data untuk dimasukkan.";

@@ -12,7 +12,7 @@ class SiswaModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['*'];
+    protected $allowedFields    = ['email', 'username', 'namasiswa', 'jenis_kelamin', 'katasandi'];
 
     // Dates
     protected $useTimestamps = false;
